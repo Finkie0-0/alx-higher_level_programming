@@ -6,3 +6,7 @@ def safe_print_division(a, b):
         division = None
     finally:
         print("Inside result: {}".format(division))
+<<<<<<< HEAD
+=======
+    return division
+>>>>>>> eec7af1fa307567bcbd76c6d97712eec747630b2
