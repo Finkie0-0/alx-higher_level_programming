@@ -1,7 +1,5 @@
 #!/usr/bin/node
-const quotes = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-let i = 0;
-while (quotes[i]) {
-  console.log(quotes[i]);
-  i++;
+const strings = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+for (let i = 0; i < strings.length; i++) {
+  console.log(strings[i]);
 }
