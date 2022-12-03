@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Write a script that lists all states in the database """
+""" Write a script that lists all states from the database hbtn_0e_0_usa """
 import MySQLdb
 import sys
 
@@ -9,14 +9,16 @@ if __name__ == "__main__":
                          passwd=sys.argv[2],
                          db=sys.argv[3],
                          port=3306)
-    """ Connects are made by creating a cursor object """
+    """In order to put our new connnection to good use we
+     need to create a cursor object"""
     cur = db.cursor()
-    """ Execution requires a parameter """
+    """The execute function requires one parameter, the query."""
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    """Obtaining Query Results"""
     rows = cur.fetchall()
     for row in rows:
         print(row)
-    """ close cursors """
+    """ Close all cursors"""
     cur.close()
-    """ close databases """
+    """Close all databases"""
     db.close()
-
