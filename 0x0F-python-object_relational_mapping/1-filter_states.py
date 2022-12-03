@@ -14,9 +14,7 @@ if __name__ == "__main__":
      need to create a cursor object"""
     cur = db.cursor()
     """The execute function requires one parameter, the query."""
-    cur.execute("SELECT * FROM states\
-        WHERE name REGEXP BINARY '^N'\
-            ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name REGEXP BINARY '^N' ORDER BY id ASC")
     """Obtaining Query Results"""
     rows = cur.fetchall()
     for row in rows:
