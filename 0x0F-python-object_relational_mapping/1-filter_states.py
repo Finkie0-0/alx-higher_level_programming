@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Lists all states with a name starting with N from the data base htbn_0e_0_usa"""
+""" script that lists all states with a name starting with N
+(upper N) from the database hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
@@ -9,18 +10,18 @@ if __name__ == "__main__":
                          passwd=sys.argv[2],
                          db=sys.argv[3],
                          port=3306)
-    """ Put new connections"""
+    """In order to put our new connnection to good use we
+     need to create a cursor object"""
     cur = db.cursor()
-    """ Requires one parameter to execute function"""
+    """The execute function requires one parameter, the query."""
     cur.execute("SELECT * FROM states\
-            WHERE name REGEXP BINARY\
+        WHERE name REGEXP BINARY '^N'\
             ORDER BY id ASC")
-    """ Obtaining Query Results"""
+    """Obtaining Query Results"""
     rows = cur.fetchall()
     for row in rows:
         print(row)
-    """ Close cursor"""
+    """ Close all cursors"""
     cur.close()
-    """ close databases"""
+    """Close all databases"""
     db.close()
-
