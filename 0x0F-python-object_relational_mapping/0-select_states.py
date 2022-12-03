@@ -9,16 +9,16 @@ if __name__ == "__main__":
             passwd=sys.argv[2],
             db=sys.argv[3],
             port=3306)
-    """ Use a cursor object """
+    """ allows execution of new connections by creating a cursor object """
     cur = db.cursor()
-    """ The function requires one parameter. """
+    """ adds parameters for executions """
     cur.execute("SELECT * FROM states ORDER BY id ASC")
-    """ Obtaining Query Results """
+    """ obtaining Query Results """
     rows = cur.fetchall()
     for row in rows:
         print(row)
-    """ Close all cursors """
+    """ Close cursors """
     cur.close()
-    """ Close Databases """
+    """ close databases """
     db.close()
 
