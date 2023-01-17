@@ -8,4 +8,3 @@ request('https://swapi-api.alx-tools.com/api/films/' + id, function (err, respon
     console.error(err);
   }
 });
-
